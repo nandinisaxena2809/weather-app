@@ -4,6 +4,8 @@ A full-stack weather application that provides real-time weather data and a 5-da
 
 Built using **React + TypeScript** on the frontend and **Node.js + Express** on the backend, powered by the **OpenWeather API**.
 
+Designed with **scalability**, **API security**, and **clean separation of concerns** in mind.
+
 ---
 
 ## ✨ Features
@@ -11,7 +13,7 @@ Built using **React + TypeScript** on the frontend and **Node.js + Express** on 
 - 🔍 City search with autocomplete suggestions
 - 🌡️ Current weather conditions
 - 📅 5-day weather forecast
-- 🌍 Accurate results using latitude & longitude
+- 🌍 Accurate geolocation-based results (lat/lon precision)
 - ⚡ Fast data fetching with React Query
 - 🎨 Smooth animations with Framer Motion
 - 🔐 Secure API key handling
@@ -66,7 +68,8 @@ OPENWEATHER_API_KEY=your_openweather_api_key_here
 PORT=5000
 ```
 
-> `.env` and `.env.local` files are ignored via `.gitignore`.
+> `.env.local` file is ignored via `.gitignore`.
+> `.env.example` included for onboarding clarity
 
 ---
 
@@ -111,11 +114,13 @@ GET /api/cities?query=del
 
 ---
 
-## 🔐 Security
+## 🔐 Security & Best Practices
 
 - API keys are never committed
 - Environment variables are protected
 - `.env.example` provided for reference
+- Centralized API handling via backend services
+- Clean error handling for failed requests
 
 ---
 
@@ -123,8 +128,8 @@ GET /api/cities?query=del
 ## 👩‍💻 Author
 
 **Nandini Saxena**  
-B.Tech CSE | Full-Stack Developer | DSA Enthusiast
+B.Tech CSE at IIIT Vadodara | Full-Stack Developer | DSA Enthusiast
 
 ---
 
-⭐ If you like this project, consider starring the repository.
+⭐ If you like this project, feel free to star the repository.
