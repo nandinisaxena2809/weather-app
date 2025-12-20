@@ -1,0 +1,18 @@
+# frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# backend
+backend/node_modules/
+backend/dist/
+backend/.env
+backend/.env.local
+
+# environment files (fallback safety)
+.env
+.env.local
+
+# misc
+.DS_Store

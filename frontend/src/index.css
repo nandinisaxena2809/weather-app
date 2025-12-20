@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 65% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 60% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 60% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 220 65% 8%;
+
+    --secondary: 220 50% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 50% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 280 70% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 40% 20%;
+    --input: 220 40% 20%;
+    --ring: 199 89% 48%;
+
+    --radius: 1rem;
+
+    /* Weather-specific tokens */
+    --weather-sunny: 45 100% 60%;
+    --weather-cloudy: 220 20% 70%;
+    --weather-rainy: 199 89% 48%;
+    --weather-stormy: 280 70% 40%;
+    --weather-snowy: 200 30% 90%;
+    
+    /* Glass effect */
+    --glass: 220 60% 15%;
+    --glass-border: 220 40% 25%;
+    
+    /* Gradients */
+    --gradient-sky-start: 220 70% 12%;
+    --gradient-sky-end: 230 80% 5%;
+  }
+
+  .dark {
+    --background: 220 65% 8%;
+    --foreground: 210 40% 98%;
+    --card: 220 60% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 220 60% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 220 65% 8%;
+    --secondary: 220 50% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 50% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 280 70% 60%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 40% 20%;
+    --input: 220 40% 20%;
+    --ring: 199 89% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-glass/40 backdrop-blur-xl border border-glass-border/30 rounded-2xl;
+  }
+  
+  .glass-input {
+    @apply bg-glass/50 backdrop-blur-md border border-glass-border/40 rounded-xl;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+}
