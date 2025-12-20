@@ -15,10 +15,13 @@ app.use("/api/cities", cityRoutes);
 
 const PORT = process.env.PORT || 5000;
 
+
 if (!process.env.OPENWEATHER_API_KEY) {
   console.error("❌ OPENWEATHER_API_KEY is missing");
   process.exit(1);
 }
+
+
 
 app.listen(PORT, () => {
   console.log(`✅ Backend running on port ${PORT}`);
@@ -26,7 +29,6 @@ app.listen(PORT, () => {
   console.error('❌ Server failed to start:', err);
 });
 
-// Add this to catch if something is calling process.exit() elsewhere
 process.on('exit', (code) => {
   console.log(`About to exit with code: ${code}`);
 });
