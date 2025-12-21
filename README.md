@@ -82,6 +82,8 @@ git clone https://github.com/your-username/weather-app.git
 cd weather-app    # or weather-app-main if downloaded as ZIP
 ```
 
+---
+
 ### Backend
 
 ```text
@@ -89,6 +91,11 @@ cd backend
 npm install
 ```
 Create a .env.local file inside the backend folder.  
+```text
+OPENWEATHER_API_KEY=your_openweather_api_key_here
+PORT=5000
+```
+
 Start the backend server:
 ```text
 npm run dev
