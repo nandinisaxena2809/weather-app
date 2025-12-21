@@ -73,13 +73,24 @@ PORT=5000
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started Locally
+
+### Clone the Repository
+
+```text
+git clone https://github.com/your-username/weather-app.git
+cd weather-app    # or weather-app-main if downloaded as ZIP
+```
 
 ### Backend
 
 ```text
 cd backend
 npm install
+```
+Create a .env.local file inside the backend folder.  
+Start the backend server:
+```text
 npm run dev
 ```
 Backend runs on:
