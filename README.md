@@ -68,7 +68,7 @@ OPENWEATHER_API_KEY=your_openweather_api_key_here
 PORT=5000
 ```
 
-> `.env.local` file is ignored via `.gitignore`.
+> `.env.local` file is ignored via `.gitignore`.  
 > `.env.example` included for onboarding clarity
 
 ---
@@ -152,3 +152,5 @@ I’m a B.Tech Computer Science student at IIIT Vadodara with a strong foundatio
 ---
 
 ⭐ If you like this project, feel free to star the repository.
+
+---
