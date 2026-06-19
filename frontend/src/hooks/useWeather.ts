@@ -3,7 +3,7 @@ import type { WeatherData } from "@/types/weather";
 
 const fetchWeather = async (city: string): Promise<WeatherData> => {
   const res = await fetch(
-    `http://localhost:5000/api/weather?city=${encodeURIComponent(city)}`
+    `https://weather-app-h5r7.onrender.com/api/weather?city=${encodeURIComponent(city)}`
   );
 
   if (!res.ok) {
