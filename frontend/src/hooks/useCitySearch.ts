@@ -13,7 +13,7 @@ export const useCitySearch = (query: string) => {
     queryKey: ["city-search", query],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/api/cities?q=${encodeURIComponent(query)}`
+        `https://weather-app-h5r7.onrender.com/api/cities?q=${encodeURIComponent(query)}`
       );
 
       if (!res.ok) {
