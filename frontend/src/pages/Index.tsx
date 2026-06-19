@@ -14,8 +14,8 @@ const Index = () => {
   const { data: weather, isLoading, isError } = useWeather(city);
 
   const handleSearch = (searchCity: string) => {
-    setCity(searchCity);
-  };
+  setCity(searchCity);
+};
 
   return (
     <>
