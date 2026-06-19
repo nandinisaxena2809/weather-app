@@ -4,7 +4,7 @@ import { Search, MapPin } from "lucide-react";
 import { useCitySearch } from "@/hooks/useCitySearch";
 
 interface SearchBarProps {
-  onSearch: (cityOrCoords: string) => void;
+  onSearch: (city: string) => void;
   isLoading?: boolean;
 }
 
@@ -19,8 +19,8 @@ const SearchBar = ({ onSearch, isLoading }: SearchBarProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     if (query.trim()) {
-      // manual search → city name
       onSearch(query.trim());
       setShowSuggestions(false);
     }
@@ -59,40 +59,36 @@ const SearchBar = ({ onSearch, isLoading }: SearchBarProps) => {
         </motion.button>
       </div>
 
-      {/* 🔽 Suggestions dropdown */}
       {showSuggestions && query.length >= 2 && (
         <ul className="absolute z-50 mt-2 w-full rounded-xl bg-black/70 backdrop-blur-md border border-white/10 overflow-hidden">
           {isFetching && (
             <li className="px-4 py-2 text-sm text-muted-foreground">
-              Searching…
+              Searching...
             </li>
           )}
 
-          {suggestions.map((city) => (
-            <li
-              key={`${city.name}-${city.lat}`}
-              className="px-4 py-2 cursor-pointer hover:bg-white/10 text-sm"
-              onClick={() => {
-                const label = `${city.name}${
-                  city.state ? ", " + city.state : ""
-                }`;
+          {suggestions.map((city) => {
+            const label = `${city.name}${
+              city.state ? ", " + city.state : ""
+            }`;
 
-                setQuery(label);
-                setShowSuggestions(false);
+            return (
+              <li
+                key={`${city.name}-${city.lat}`}
+                className="px-4 py-2 cursor-pointer hover:bg-white/10 text-sm"
+                onClick={() => {
+                  setQuery(label);
+                  setShowSuggestions(false);
 
-                // ✅ FIX: pass structured coords, not "lat,lon"
-                onSearch(
-                  JSON.stringify({
-                    lat: city.lat,
-                    lon: city.lon,
-                  })
-                );
-              }}
-            >
-              <span className="font-medium">{city.name}</span>
-              {city.state && `, ${city.state}`} ({city.country})
-            </li>
-          ))}
+
+                  onSearch(label);
+                }}
+              >
+                <span className="font-medium">{city.name}</span>
+                {city.state && `, ${city.state}`} ({city.country})
+              </li>
+            );
+          })}
 
           {!isFetching && suggestions.length === 0 && (
             <li className="px-4 py-2 text-sm text-muted-foreground">
@@ -106,4 +102,3 @@ const SearchBar = ({ onSearch, isLoading }: SearchBarProps) => {
 };
 
 export default SearchBar;
-
